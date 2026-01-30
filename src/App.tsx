@@ -28,11 +28,9 @@ function AppRoutes() {
         path="/"
         element={
           <PrivateRoute>
-            <ChildDataProvider>
-              <AppLayout>
-                <HomePage />
-              </AppLayout>
-            </ChildDataProvider>
+            <AppLayout>
+              <HomePage />
+            </AppLayout>
           </PrivateRoute>
         }
       />
@@ -40,11 +38,9 @@ function AppRoutes() {
         path="/history"
         element={
           <PrivateRoute>
-            <ChildDataProvider>
-              <AppLayout>
-                <HistoryPage />
-              </AppLayout>
-            </ChildDataProvider>
+            <AppLayout>
+              <HistoryPage />
+            </AppLayout>
           </PrivateRoute>
         }
       />
@@ -52,11 +48,9 @@ function AppRoutes() {
         path="/week/:weekStart"
         element={
           <PrivateRoute>
-            <ChildDataProvider>
-              <AppLayout>
-                <WeekDetailPage />
-              </AppLayout>
-            </ChildDataProvider>
+            <AppLayout>
+              <WeekDetailPage />
+            </AppLayout>
           </PrivateRoute>
         }
       />
@@ -64,11 +58,9 @@ function AppRoutes() {
         path="/settings"
         element={
           <PrivateRoute>
-            <ChildDataProvider>
-              <AppLayout>
-                <SettingsPage />
-              </AppLayout>
-            </ChildDataProvider>
+            <AppLayout>
+              <SettingsPage />
+            </AppLayout>
           </PrivateRoute>
         }
       />
@@ -81,7 +73,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <AppRoutes />
+        <ChildDataProvider>
+          <AppRoutes />
+        </ChildDataProvider>
       </AuthProvider>
     </BrowserRouter>
   );
