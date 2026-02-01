@@ -5,7 +5,8 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
-    // 복잡한 설정 제거하고 기본값 사용
     outDir: 'dist',
+    sourcemap: false,
+    // chunkSizeWarningLimit이나 rollupOptions 같은 복잡한 설정 제거
   }
 })
