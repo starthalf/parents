@@ -18,9 +18,5 @@ export default defineConfig({
     },
     // 소스맵 비활성화로 빌드 속도 향상
     sourcemap: false,
-  },
-  // 최적화 설정
-  optimizeDeps: {
-    include: ['recharts', 'react', 'react-dom', 'react-router-dom']
   }
 })
